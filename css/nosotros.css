@@ -1,0 +1,592 @@
+/* =========================================================
+   DYZEN — PÁGINA NOSOTROS
+   Usa estilos-generales.css para tipografía, contenedor,
+   etiquetas y botones. Header y footer siguen el sistema de index.css.
+   ========================================================= */
+
+
+
+/* HERO */
+.nosotros-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--color-fondo-blanco);
+    border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.nosotros-hero__brillo {
+    position: absolute;
+    z-index: -1;
+    top: -210px;
+    right: -120px;
+    width: min(62vw, 760px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(85, 185, 232, 0.13), rgba(85, 185, 232, 0) 68%);
+    pointer-events: none;
+}
+
+.nosotros-hero__contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.8fr);
+    align-items: center;
+    gap: clamp(40px, 7vw, 100px);
+    padding-block: clamp(76px, 10vw, 132px) clamp(70px, 8vw, 110px);
+}
+
+.nosotros-hero__texto { max-width: 680px; }
+.nosotros-hero h1 {
+    max-width: 680px;
+    margin-top: 22px;
+    color: var(--color-texto);
+    font-size: clamp(42px, 5.4vw, 70px);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
+}
+
+.nosotros-hero h1 span { color: var(--color-acento-oscuro); }
+
+.nosotros-hero__texto > p {
+    max-width: 580px;
+    margin-top: 26px;
+    color: var(--color-texto-secundario);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.nosotros-enlace {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    color: var(--color-texto);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nosotros-enlace span {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border: 1px solid var(--color-borde);
+    border-radius: 50%;
+    color: var(--color-acento-oscuro);
+    transition: transform 180ms ease;
+}
+.nosotros-enlace:hover span { transform: translateY(3px); }
+
+.nosotros-hero__visual {
+    position: relative;
+    display: grid;
+    width: min(100%, 440px);
+    aspect-ratio: 1;
+    place-items: center;
+    justify-self: center;
+}
+
+.nosotros-hero__aro {
+    position: absolute;
+    border: 1px solid rgba(85, 185, 232, 0.3);
+    border-radius: 50%;
+}
+.nosotros-hero__aro--exterior {
+    inset: 3%;
+    box-shadow: 0 0 0 22px rgba(85, 185, 232, 0.025), 0 0 0 48px rgba(85, 185, 232, 0.018);
+}
+.nosotros-hero__aro--interior { inset: 16%; border-color: rgba(85, 185, 232, 0.2); }
+.nosotros-hero__marca {
+    display: grid;
+    width: 48%;
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid rgba(220, 227, 233, 0.9);
+    border-radius: 30%;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 25px 70px rgba(16, 24, 32, 0.09);
+}
+.nosotros-hero__marca img { display: block; width: 75%; height: 75%; object-fit: contain; }
+.nosotros-hero__punto { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--color-acento); box-shadow: 0 0 0 7px rgba(85, 185, 232, 0.12); }
+.nosotros-hero__punto--uno { top: 19%; right: 20%; }
+.nosotros-hero__punto--dos { bottom: 22%; left: 13%; width: 8px; height: 8px; }
+
+.nosotros-hero__pie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 18px 24px;
+    border-top: 1px solid var(--color-borde-suave);
+    color: var(--color-texto-secundario);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.nosotros-hero__pie i { width: 4px; height: 4px; border-radius: 50%; background: var(--color-acento); }
+
+/* INTRODUCCIÓN */
+.nosotros-intro { padding-block: clamp(78px, 10vw, 130px); background: var(--color-fondo-blanco); }
+.nosotros-intro__contenido {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.6fr) minmax(0, 1.4fr);
+    gap: clamp(38px, 8vw, 110px);
+    align-items: start;
+}
+.nosotros-intro__indice { display: flex; align-items: center; gap: 14px; padding-top: 8px; }
+.nosotros-intro__numero { color: var(--color-acento-oscuro); font-size: 14px; font-weight: 800; }
+.nosotros-intro__linea { width: 36px; height: 1px; background: var(--color-borde); }
+.nosotros-intro__rotulo { color: var(--color-texto-secundario); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.nosotros-intro__texto { max-width: 800px; }
+.nosotros-intro h2 {
+    max-width: 760px;
+    color: var(--color-texto);
+    font-size: clamp(34px, 4.2vw, 54px);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+.nosotros-intro h2 span { color: var(--color-texto-secundario); }
+.nosotros-intro__texto p { margin-top: 24px; color: var(--color-texto-secundario); font-size: 16px; line-height: 1.85; }
+.nosotros-intro__texto p + p { margin-top: 16px; }
+
+/* CÓMO TRABAJAMOS */
+.como-trabajamos { padding-block: clamp(78px, 9vw, 120px); background: var(--color-fondo); }
+.nosotros-seccion-encabezado { max-width: 720px; }
+.nosotros-seccion-encabezado h2 {
+    margin-top: 18px;
+    color: var(--color-texto);
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+}
+.nosotros-seccion-encabezado h2 span { color: var(--color-acento-oscuro); }
+.nosotros-seccion-encabezado > p { max-width: 620px; margin-top: 20px; color: var(--color-texto-secundario); font-size: 16px; line-height: 1.8; }
+
+.nosotros-pasos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
+.nosotros-paso {
+    position: relative;
+    min-width: 0;
+    padding: 30px 28px 32px;
+    background: var(--color-fondo-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: 0 8px 30px rgba(16, 24, 32, 0.035);
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.nosotros-paso:hover { transform: translateY(-4px); border-color: #cbd7df; box-shadow: 0 18px 45px rgba(16, 24, 32, 0.07); }
+.nosotros-paso__numero { position: absolute; top: 29px; right: 28px; color: #9aa8b3; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+.nosotros-paso__icono { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 14px; background: rgba(85, 185, 232, 0.12); }
+.nosotros-paso__icono svg { width: 24px; height: 24px; stroke: var(--color-acento-oscuro); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.nosotros-paso h3 { margin-top: 27px; color: var(--color-texto); font-size: 19px; line-height: 1.3; letter-spacing: -0.025em; }
+.nosotros-paso p { margin-top: 12px; color: var(--color-texto-secundario); font-size: 14px; line-height: 1.8; }
+
+/* CTA */
+.nosotros-cta { padding-block: clamp(65px, 8vw, 96px); background: var(--color-oscuro); color: #fff; }
+.nosotros-cta__contenido { display: flex; align-items: center; justify-content: space-between; gap: 45px; }
+.nosotros-cta__contenido > div { max-width: 700px; }
+.nosotros-cta h2 { max-width: 650px; margin-top: 18px; font-size: clamp(36px, 4.8vw, 58px); line-height: 1.06; letter-spacing: -0.05em; text-wrap: balance; }
+.nosotros-cta p { max-width: 560px; margin-top: 20px; color: #aeb9c2; font-size: 16px; line-height: 1.8; }
+.nosotros-cta .boton { flex-shrink: 0; display: inline-flex; align-items: center; gap: 16px; }
+
+
+
+/* TABLETS */
+@media (max-width: 1000px) {
+    .navegacion { gap: 22px; margin-right: 4px; }
+    .nosotros-hero__contenido { grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.8fr); gap: 34px; }
+    .nosotros-hero__visual { width: min(100%, 360px); }
+    .nosotros-intro__contenido { grid-template-columns: 1fr 2fr; gap: 40px; }
+    .nosotros-paso { padding: 25px 22px 28px; }
+    .nosotros-paso__numero { right: 22px; }
+}
+
+/* MÓVILES */
+@media (max-width: 768px) {
+    .header__contenido { min-height: 70px; }
+    .navegacion, .header__boton { display: none; }
+    .menu-movil { display: block; }
+
+    .nosotros-hero__contenido { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-block: 72px 55px; }
+    .nosotros-hero__texto { max-width: 640px; }
+    .nosotros-hero h1 { max-width: 620px; font-size: clamp(40px, 8vw, 60px); }
+    .nosotros-hero__texto > p { font-size: 16px; }
+    .nosotros-hero__visual { width: min(76vw, 330px); }
+    .nosotros-hero__brillo { top: 180px; right: -160px; width: 500px; }
+
+    .nosotros-intro__contenido { grid-template-columns: 1fr; gap: 28px; }
+    .nosotros-intro__indice { padding-top: 0; }
+    .nosotros-pasos { grid-template-columns: 1fr; gap: 14px; margin-top: 35px; }
+    .nosotros-paso { padding: 25px; }
+    .nosotros-paso h3 { margin-top: 20px; }
+
+    .nosotros-cta__contenido { flex-direction: column; align-items: flex-start; gap: 28px; }
+    .footer__contenido { grid-template-columns: 1fr; gap: 14px; }
+    .footer__copyright { text-align: left; }
+}
+
+@media (max-width: 480px) {
+    .logo { gap: 8px; font-size: 18px; }
+    .logo__imagen { width: 31px; height: 31px; }
+    .menu-movil__contenido { width: min(230px, calc(100vw - 32px)); }
+
+    .nosotros-hero__contenido { padding-block: 58px 42px; }
+    .nosotros-hero h1 { margin-top: 18px; font-size: clamp(37px, 10.5vw, 48px); line-height: 1.06; }
+    .nosotros-hero__texto > p { margin-top: 20px; font-size: 15px; line-height: 1.75; }
+    .nosotros-enlace { margin-top: 24px; font-size: 13px; }
+    .nosotros-hero__visual { width: min(72vw, 280px); }
+    .nosotros-hero__pie { gap: 10px; padding: 15px 12px; font-size: 9px; letter-spacing: 0.08em; }
+    .nosotros-hero__pie i { width: 3px; height: 3px; }
+
+    .nosotros-intro, .como-trabajamos { padding-block: 68px; }
+    .nosotros-intro__contenido { gap: 24px; }
+    .nosotros-intro__rotulo { font-size: 11px; }
+    .nosotros-intro h2, .nosotros-seccion-encabezado h2 { font-size: clamp(31px, 8.5vw, 39px); line-height: 1.12; }
+    .nosotros-intro__texto p, .nosotros-seccion-encabezado > p { margin-top: 18px; font-size: 15px; line-height: 1.8; }
+    .nosotros-pasos { margin-top: 28px; }
+    .nosotros-paso { padding: 23px 21px 25px; }
+    .nosotros-paso__numero { top: 24px; right: 21px; }
+
+    .nosotros-cta { padding-block: 64px; }
+    .nosotros-cta h2 { font-size: clamp(34px, 9vw, 42px); line-height: 1.08; }
+    .nosotros-cta p { font-size: 15px; }
+    .nosotros-cta .boton { width: 100%; justify-content: center; }
+    .footer { padding-block: 29px; }
+    .footer__contenido > p { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+
+/* =========================================================
+   DYZEN — AJUSTES DE DISEÑO Y TONO CERCANO
+   ========================================================= */
+
+
+/* =========================================================
+   BANNER QUIÉNES SOMOS
+   ========================================================= */
+
+.nosotros-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 280px;
+    margin: 0;
+    overflow: hidden;
+    background: #080a0c;
+    border: 0;
+    border-bottom: 1px solid #20272d;
+}
+
+
+/* =========================================================
+   BANNER NOSOTROS — DYZEN
+   ========================================================= */
+
+.nosotros-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 350px;
+    margin: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 85% 45%,
+            rgba(38, 149, 202, 0.16),
+            transparent 42%
+        ),
+        linear-gradient(115deg, #080a0c 0%, #0b1116 65%, #101820 100%);
+    border: 0;
+    border-bottom: 1px solid rgba(85, 185, 232, 0.2);
+}
+
+/* Cuadrícula tecnológica */
+.nosotros-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(
+        90deg,
+        transparent,
+        black 35%,
+        black 100%
+    );
+}
+
+/* Resplandor celeste */
+.nosotros-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: 8%;
+    width: 260px;
+    height: 260px;
+    transform: translateY(-50%);
+    border: 1px solid rgba(85, 185, 232, 0.16);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(85, 185, 232, 0.025),
+        0 0 0 70px rgba(85, 185, 232, 0.02),
+        inset 0 0 60px rgba(85, 185, 232, 0.04);
+    pointer-events: none;
+}
+
+.nosotros-hero__contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 350px;
+    padding-block: 70px;
+}
+
+.nosotros-hero h1 {
+    position: relative;
+    max-width: 850px;
+    margin: 0;
+    padding-left: 24px;
+    color: #ffffff;
+    font-size: clamp(42px, 6.5vw, 78px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.065em;
+    text-align: left;
+    text-wrap: balance;
+}
+
+/* Etiqueta superior */
+.nosotros-hero h1::before {
+    content: "DYZEN / DETRÁS DE CADA PROYECTO";
+    display: block;
+    margin-bottom: 22px;
+    color: #79d2f7;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+}
+
+/* Línea de acento */
+.nosotros-hero h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    background: linear-gradient(
+        180deg,
+        #8bdcff,
+        #2695ca 70%,
+        transparent
+    );
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .nosotros-hero,
+    .nosotros-hero__contenido {
+        min-height: 290px;
+    }
+
+    .nosotros-hero__contenido {
+        padding-block: 55px;
+    }
+
+    .nosotros-hero h1 {
+        max-width: 580px;
+        padding-left: 18px;
+        font-size: clamp(38px, 7vw, 56px);
+    }
+
+    .nosotros-hero h1::before {
+        max-width: 260px;
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+    }
+
+    .nosotros-hero::after {
+        right: -110px;
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nosotros-hero,
+    .nosotros-hero__contenido {
+        min-height: 250px;
+    }
+
+    .nosotros-hero__contenido {
+        padding-block: 45px;
+    }
+
+    .nosotros-hero h1 {
+        padding-left: 15px;
+        font-size: clamp(34px, 9vw, 42px);
+        letter-spacing: -0.05em;
+    }
+
+    .nosotros-hero h1::before {
+        max-width: 230px;
+        margin-bottom: 16px;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+    }
+
+    .nosotros-hero::after {
+        right: -145px;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+/* Franja sutil de luz celeste */
+.nosotros-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: min(700px, 90%);
+    height: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #55b9e8,
+        transparent
+    );
+}
+
+.nosotros-hero__contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-block: 65px;
+}
+
+.nosotros-hero h1 {
+    max-width: 100%;
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.055em;
+    text-align: center;
+    text-wrap: balance;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+    .nosotros-hero {
+        min-height: 220px;
+    }
+
+    .nosotros-hero__contenido {
+        padding-block: 55px;
+    }
+
+    .nosotros-hero h1 {
+        font-size: clamp(36px, 7vw, 54px);
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    .nosotros-hero {
+        min-height: 180px;
+    }
+
+    .nosotros-hero__contenido {
+        padding-block: 42px;
+    }
+
+    .nosotros-hero h1 {
+        font-size: clamp(30px, 8.5vw, 40px);
+        letter-spacing: -0.04em;
+    }
+}
+
+
+/* IMAGEN VERTICAL — SECCIÓN NOSOTROS */
+
+.nosotros-intro__contenido {
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    align-items: stretch;
+    gap: clamp(35px, 6vw, 85px);
+}
+
+.nosotros-intro__imagen {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    border-radius: var(--radio);
+    background: #e1e8ed;
+}
+
+.nosotros-intro__imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    .nosotros-intro__contenido {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .nosotros-intro__imagen {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+    }
+
+    .nosotros-intro__imagen img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 480px) {
+    .nosotros-intro__imagen {
+        aspect-ratio: 1 / 2;
+        border-radius: 14px;
+    }
+}

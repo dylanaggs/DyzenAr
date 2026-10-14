@@ -1,0 +1,614 @@
+
+/* =========================================================
+   DYZEN — ESTILOS GENERALES
+   ========================================================= */
+
+
+/* ==================== VARIABLES ==================== */
+
+:root {
+    /* Fondos */
+    --color-fondo: #080a0c;
+    --color-fondo-blanco: #0d1217;
+    --color-fondo-suave: #111a21;
+
+    /* Textos */
+    --color-texto: #f4f7fa;
+    --color-texto-secundario: #a1adb7;
+    --color-texto-suave: #7b8792;
+    --color-texto-span: #ffffff;
+
+    /* Bordes */
+    --color-borde: #26343e;
+    --color-borde-suave: #202830;
+
+    /* Identidad DYZEN */
+    --color-acento: #55b9e8;
+    --color-acento-oscuro: #79d2f7;
+
+    /* Elementos oscuros */
+    --color-oscuro: #080a0c;
+
+    /* Dimensiones */
+    --contenedor: 1180px;
+    --radio: 18px;
+    --radio-pequeno: 10px;
+
+    /* Transiciones */
+    --transicion: 250ms ease;
+}
+
+
+/* ==================== RESET ==================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ==================== CONTENEDOR ==================== */
+
+.contenedor {
+    width: min(calc(100% - 48px), var(--contenedor));
+    margin-inline: auto;
+}
+
+
+/* ==================== HEADER ==================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgba(8, 10, 12, 0.96);
+    border-bottom: 1px solid var(--color-borde-suave);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header__contenido {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 76px;
+    gap: 20px;
+}
+
+
+/* ==================== LOGO ==================== */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: var(--color-texto);
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+}
+
+.logo__imagen {
+    display: block;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+
+/* ==================== NAVEGACIÓN DESKTOP ==================== */
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.navegacion a {
+    color: var(--color-texto-secundario);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        color var(--transicion),
+        background var(--transicion);
+}
+
+.navegacion a:hover,
+.navegacion a[aria-current="page"] {
+    color: var(--color-acento-oscuro);
+}
+
+.navegacion a[aria-current="page"] {
+    font-weight: 700;
+}
+
+
+/* ==================== BOTONES ==================== */
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 0 24px;
+    border-radius: var(--radio-pequeno);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        transform var(--transicion),
+        background-color var(--transicion),
+        border-color var(--transicion),
+        color var(--transicion),
+        box-shadow var(--transicion);
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton--principal {
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+}
+
+.boton--principal:hover {
+    background: var(--color-acento-oscuro);
+    box-shadow: 0 10px 25px rgba(85, 185, 232, 0.16);
+}
+
+.boton--secundario {
+    background: transparent;
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+}
+
+.boton--secundario:hover {
+    background: var(--color-fondo-suave);
+    border-color: var(--color-acento);
+}
+
+.boton--pequeno {
+    min-height: 42px;
+    padding-inline: 18px;
+    font-size: 13px;
+}
+
+.boton--claro {
+    background: #ffffff;
+    color: #080a0c;
+}
+
+.boton--claro:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.header__boton {
+    flex-shrink: 0;
+}
+
+
+/* ==================== MENÚ RESPONSIVE ==================== */
+
+.menu-movil {
+    display: none;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.menu-movil summary {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    list-style: none;
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    background: var(--color-fondo-suave);
+    cursor: pointer;
+    transition:
+        border-color var(--transicion),
+        background var(--transicion);
+}
+
+.menu-movil summary::-webkit-details-marker {
+    display: none;
+}
+
+.menu-movil summary:hover,
+.menu-movil[open] summary {
+    border-color: var(--color-acento);
+    background: #15232c;
+}
+
+/* Líneas del botón */
+
+.menu-movil summary span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-acento-oscuro);
+    transition:
+        transform var(--transicion),
+        opacity var(--transicion);
+}
+
+/* Animación de hamburguesa a X */
+
+.menu-movil[open] summary span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-movil[open] summary span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-movil[open] summary span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ==================== PANEL DEL MENÚ MÓVIL ==================== */
+
+.menu-movil__contenido {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 110;
+    display: grid;
+    gap: 5px;
+    width: min(260px, calc(100vw - 32px));
+    padding: 10px;
+    background: #0b1116;
+    border: 1px solid var(--color-borde);
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+}
+
+.menu-movil__contenido a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: var(--color-texto-secundario);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        color var(--transicion),
+        background var(--transicion),
+        border-color var(--transicion);
+}
+
+.menu-movil__contenido a:hover,
+.menu-movil__contenido a:focus-visible {
+    background: var(--color-fondo-suave);
+    border-color: var(--color-borde);
+    color: var(--color-acento-oscuro);
+}
+
+.menu-movil__contenido a[aria-current="page"] {
+    background: rgba(85, 185, 232, 0.08);
+    border-color: rgba(85, 185, 232, 0.25);
+    color: var(--color-acento-oscuro);
+}
+
+/* Botón de contacto dentro del menú */
+
+.menu-movil__contenido .menu-movil__cta {
+    justify-content: center;
+    margin-top: 4px;
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+    font-weight: 700;
+}
+
+.menu-movil__contenido .menu-movil__cta:hover {
+    background: var(--color-acento-oscuro);
+    color: var(--color-oscuro);
+}
+
+
+/* ==================== ETIQUETAS ==================== */
+
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-acento-oscuro);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.etiqueta::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--color-acento);
+}
+
+.etiqueta--clara {
+    color: #a8ddf5;
+}
+
+.etiqueta--clara::before {
+    background: #ffffff;
+}
+
+
+/* ==================== FOOTER ==================== */
+
+.footer {
+    padding-block: 35px;
+    background: #0b1116;
+    color: #ffffff;
+}
+
+.footer__contenido {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 28px;
+}
+
+.logo--footer {
+    color: #ffffff;
+}
+
+.logo--footer .logo__imagen {
+    width: 32px;
+    height: 32px;
+}
+
+.footer__contenido > p {
+    color: #a1adb7;
+    font-size: 13px;
+}
+
+.footer__copyright {
+    color: #687783;
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* ==================== ACCESIBILIDAD ==================== */
+
+:focus-visible {
+    outline: 2px solid rgba(121, 210, 247, 0.8);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--color-acento);
+    color: var(--color-oscuro);
+}
+
+
+/* ==================== RESPONSIVE: TABLETS ==================== */
+
+@media (max-width: 768px) {
+    .contenedor {
+        width: min(calc(100% - 32px), var(--contenedor));
+    }
+
+    .header__contenido {
+        min-height: 72px;
+        gap: 16px;
+    }
+
+    .logo__imagen {
+        width: 36px;
+        height: 36px;
+    }
+
+    .navegacion {
+        display: none;
+    }
+
+    .menu-movil {
+        display: block;
+    }
+
+    .boton {
+        min-height: 48px;
+    }
+
+    .footer__contenido {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 14px;
+        text-align: center;
+    }
+
+    .footer__copyright {
+        text-align: center;
+    }
+}
+
+
+/* ==================== RESPONSIVE: CELULARES ==================== */
+
+@media (max-width: 480px) {
+    .contenedor {
+        width: calc(100% - 28px);
+    }
+
+    .header__contenido {
+        min-height: 68px;
+    }
+
+    .logo {
+        gap: 8px;
+        font-size: 17px;
+    }
+
+    .logo__imagen {
+        width: 32px;
+        height: 32px;
+    }
+
+    .menu-movil summary {
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu-movil__contenido {
+        width: min(260px, calc(100vw - 28px));
+    }
+
+    .footer {
+        padding-block: 28px;
+    }
+}
+
+
+/* ==================== RESPONSIVE: ESCRITORIO ==================== */
+
+@media (min-width: 769px) {
+    .menu-movil {
+        display: none !important;
+    }
+
+    .navegacion {
+        display: flex;
+    }
+}
+
+
+/* ==================== MOVIMIENTO REDUCIDO ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* ==================== HEADER OSCURO DEFINITIVO ==================== */
+
+header.header,
+.header {
+    background: rgba(8, 10, 12, 0.96) !important;
+    background-color: rgba(8, 10, 12, 0.96) !important;
+    border-bottom: 1px solid #202830 !important;
+    color: #f4f7fa !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header .header__contenido {
+    background: transparent !important;
+}
+
+.header .logo {
+    color: #f4f7fa !important;
+}
+
+.header .navegacion a:not(.boton) {
+    color: #a1adb7 !important;
+}
+
+.header .navegacion a:not(.boton):hover,
+.header .navegacion a[aria-current="page"]:not(.boton) {
+    color: #79d2f7 !important;
+}
+
+.header .navegacion .boton--principal {
+    background: #55b9e8 !important;
+    color: #080a0c !important;
+}
+
+.header .navegacion .boton--principal:hover {
+    background: #79d2f7 !important;
+}
+
+/* Evita fondos blancos en el menú móvil */
+
+.header .menu-movil summary {
+    background: #111a21 !important;
+    border-color: #26343e !important;
+}
+
+.header .menu-movil__contenido {
+    background: #0b1116 !important;
+    border-color: #26343e !important;
+}
+
+.header .menu-movil__contenido a {
+    color: #a1adb7 !important;
+}
+
+.header .menu-movil__contenido a:hover,
+.header .menu-movil__contenido a[aria-current="page"] {
+    background: #111a21 !important;
+    color: #79d2f7 !important;
+}
